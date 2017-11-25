@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\d8_activity_list\D8ActivityListEvent;
+
+//function d8_activity_list_entity_insert(EntityInterface $entity) {
+//  $dispatcher = \Drupal::service('event_dispatcher');
+//  $event = new D8ActivityListEvent($entity);
+//  $dispatcher->dispatch(D8ActivityListEvent::NODE_INSERT, $event);
+//}
+
+/**
+ * Implements hook_theme().
+ */
+function d8_activity_list_theme() {
+  return array(
+    'd8_activity_list' => array(
+      'variables' => array('d8_activity_list_detail' => NULL),
+    ),
+  );
+}
+

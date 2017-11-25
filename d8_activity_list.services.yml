@@ -1,0 +1,20 @@
+services:
+  d8_activity_list.access_checker:
+    class: Drupal\d8_activity_list\Access\D8ActivityListAccessCheck
+    arguments: ['@current_user']
+    tags:
+      - { name: access_check, applies_to: _custom_access_check1}
+
+  d8_activity_list.database_storage:
+    class: Drupal\d8_activity_list\ConnectionService
+    arguments: ['@database']
+
+  d8_activity_list.event_subscriber:
+      class: Drupal\d8_activity_list\EventSubscriber\EventSubscriber
+      arguments: ['@path.current', '@logger.factory']
+      tags:
+        - { name: event_subscriber }
+
+  d8_activity_list.weather_service:
+    class: Drupal\d8_activity_list\WeatherService
+    arguments: ['@http_client', '@config.factory']

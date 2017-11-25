@@ -1,0 +1,5 @@
+d8_activity_list.static_content:
+  title: 'Static Content Page'
+  description: 'Static Content Page Congiguration.'
+  route_name: d8_activity_list.static_content
+  parent: system.admin_config_system

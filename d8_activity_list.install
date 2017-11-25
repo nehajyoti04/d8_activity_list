@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the d8_activity_list module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function d8_activity_list_schema() {
+  $schema['d8_demo'] = array(
+    'description' => 'Stores first and last name.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary key of table.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'first_name' => array(
+        'description' => 'First Name.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'last_name' => array(
+        'description' => 'Last Name',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}

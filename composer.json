@@ -1,0 +1,11 @@
+{
+  "require": {
+    "antoineaugusti/google-books": "^0.3.0"
+  },
+  "merge-plugin": {
+    "include": [
+      "core/composer.json",
+      "modules/*/composer.json"
+    ]
+  }
+}

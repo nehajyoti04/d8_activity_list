@@ -1,0 +1,69 @@
+d8_activity_list.static_content:
+  path: '/static_content'
+  defaults:
+    _controller: '\Drupal\d8_activity_list\Controller\D8ActivityListController::d8_static_callback'
+    _title: 'Static Content Page'
+  requirements:
+    _permission: 'access training content'
+
+d8_activity_list.arg_demo:
+  path: 'arg-demo/{arg}'
+  defaults:
+    _controller: '\Drupal\d8_activity_list\Controller\D8ActivityListController::d8_dynamic_listing_callback'
+    arg: 'hello'
+  requirements:
+    _permission: 'access training content'
+
+d8_activity_list.node_detail:
+  path: 'list/{node}'
+  defaults:
+    _controller: '\Drupal\d8_activity_list\Controller\D8ActivityListController::d8_node_detail_callback'
+  requirements:
+    # _custom_access_check1: 'TRUE'
+    _custom_access: '\Drupal\d8_activity_list\Controller\D8ActivityListController::access'
+
+d8_activity_list.simple_form:
+  path: 'simple-form'
+  defaults:
+    _form: '\Drupal\d8_activity_list\Form\SimpleForm'
+  requirements:
+  # Can be accessed by an anonymous user.
+    _access: 'TRUE'
+
+d8_activity_list.dic_form:
+  path: 'dic-form'
+  defaults:
+    _form: '\Drupal\d8_activity_list\Form\DicForm'
+  requirements:
+  # Can be accessed by an anonymous user.
+    _access: 'TRUE'
+
+d8_activity_list.custom_ajax_form:
+  path: 'custom-ajax-form'
+  defaults:
+    _form: '\Drupal\d8_activity_list\Form\CustomAjaxForm'
+  requirements:
+  # Can be accessed by an anonymous user.
+    _access: 'TRUE'
+
+d8_activity_list.settings:
+  path: '/admin/weather-config'
+  defaults:
+    _form: '\Drupal\d8_activity_list\Form\WeatherConfigForm'
+  requirements:
+    _permission: 'access training content'
+
+d8_activity_list.multiple_nids:
+  path: 'multiple-nids/{node1}/{node2}/{node3}'
+  defaults:
+    _controller: '\Drupal\d8_activity_list\Controller\D8ActivityListController::d8_multiple_nodes_callback'
+  requirements:
+    _permission: 'access training content'
+  options:
+    parameters:
+      node1:
+        type: entity:node
+      node2:
+        type: entity:node
+      node3:
+        type: entity:node

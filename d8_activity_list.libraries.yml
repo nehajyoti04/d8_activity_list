@@ -1,0 +1,10 @@
+d8_activity_list_theme:
+  version: 8.x
+  css:
+    base:
+      css/d8_activity_list.css: {}
+  js:
+      js/flip.js: {}
+      js/d8_activity_list.js: {}
+  dependencies:
+    - core/jquery

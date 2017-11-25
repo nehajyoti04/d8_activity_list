@@ -1,0 +1,9 @@
+d8_activity_list.tab_1:
+  route_name : d8_activity_list.static_content
+  title: Tab1
+  base_route: d8_activity_list.static_content
+
+d8_activity_list.tab_2:
+  route_name: d8_activity_list.arg-demo
+  title: Tab2
+  base_route: d8_activity_list.static_content

@@ -1,0 +1,5 @@
+d8_activity_list.add_content:
+  route_name: node.add_page
+  title: 'Add content'
+  appears_on:
+    - d8_activity_list.node_detail

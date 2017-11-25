@@ -1,0 +1,4 @@
+name: D8 Activity List
+type: module
+description: "Activity List of Drupal 8 Training."
+core: 8.x
